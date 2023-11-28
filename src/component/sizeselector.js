@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import './sizeselector.css'
 function Sizeselector(props) {
- const sizes = ['xs', 's', 'm', 'l', 'xl', 'xxl'];
+ const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
  const [selectedSize, setSelectedSize] = useState(null);
 
  const handleClick = (size) => {
@@ -13,19 +13,17 @@ function Sizeselector(props) {
  return (
     <div className="size">
       {sizes.map((size, index) => (
-        <button 
-        className="sizebutton"
-          key={index} 
-          onClick={() => handleClick(size)}
-          style={{ 
-            border: selectedSize === size ? '2px solid white' : 'none',
-            padding: '5px 10px',
-            margin: '5px',
-            cursor: 'pointer',
-          }}
-        >
+        <label className="sizebutton" key={index}>
+          <input 
+            required
+            type="radio" 
+            name="size" 
+            value={size} 
+            checked={selectedSize === size} 
+            onChange={() => handleClick(size)}
+          />
           {size}
-        </button>
+        </label>
       ))}
     </div>
  )
