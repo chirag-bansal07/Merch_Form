@@ -1,5 +1,6 @@
     .cart
     {
+        width: 100%;
         padding: 2rem;
         display: flex;
         flex-direction: column;
@@ -49,14 +50,17 @@
             display: flex;
             align-self: center;
             width: 60%;
-            margin-left: 4rem;
+            margin-left: 12rem;
+            margin-top: 2rem;
         }
         .maincart{
             display: flex;
             flex-direction: column;
-            margin-left: 5rem;
+            margin-left: 9rem;
         }
         .cart{
+            margin-left:14rem ;
+            width: 60%;
             margin-right: 0;
             padding-right: 0rem;
         }

@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 let selectedSize = '';
 let selectedMerch = '';
 let Prize,total;
-let number=0,item;
 const Cart = ({finalcart}) => {
   const initialCart = JSON.parse(localStorage.getItem('cart')) || [];
   const [cart, setCart] = useState(initialCart);
@@ -15,7 +14,7 @@ const Cart = ({finalcart}) => {
 
   const selectSize = (size) => {
     selectedSize = size;
-    if (selectSize===''){
+    if (selectedSize === ''){
       setsizeerror(true);
       console.log(sizeerror)
       return;
@@ -28,18 +27,14 @@ const Cart = ({finalcart}) => {
 
   const cartHandler = () => {
     setCart([...cart, { merch: selectedMerch, size: selectedSize, Prize: Prize }]);
-    number+=1;
     total+=Prize;
-    localStorage.setItem('cartitem', number);
     localStorage.setItem('totalprize', total);
   };
 
   const cartReset = () => {
     setCart([]);
     total=0;
-    number=0;
     localStorage.setItem('totalprize', 0);
-    localStorage.setItem('cartitem', number);
   };
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -51,8 +46,6 @@ const Cart = ({finalcart}) => {
   }
   total=localStorage.getItem('totalprize');
   total=parseInt(total, 10); 
-  item=localStorage.getItem('cartitem');
-  item=parseInt(item, 10);
   finalcart(cart);  
   return (
     <div className='maincart'>
@@ -66,7 +59,7 @@ const Cart = ({finalcart}) => {
       </div>
       <div className='cartitem'>
       <div className='totalPrize'>YOUR CART TOTAL IS<div className='total'>{total}</div></div>
-      <div className='totalPrize'>NUMBER OF ITEMS ADDED <div className='total'>{item}</div></div>
+      <div className='totalPrize'>NUMBER OF ITEMS ADDED <div className='total'>{cart.length}</div></div>
       </div>
       </div>
     </div>
