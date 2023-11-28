@@ -1,0 +1,54 @@
+    .cart
+    {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin: 2rem;
+        align-items: center;
+        background-color: #051956;
+        border-radius: 30px;
+    }
+    .buttons{
+        gap: 3rem;
+    }
+    .cartbutton{
+        width: 9rem;
+        height: 3rem;
+    }
+    .totalPrize{
+        color: white;
+    }
+    .total{
+        text-align: center;
+        width: 6rem;
+        height: 1.7rem;
+        border-radius: 20px;
+        background-color: #b421e0;
+        margin-left: 2rem;
+    }
+    .cartitem{
+        display: flex;
+        gap: 4rem;
+        text-align: center;
+        margin-left: 2.7rem;
+    }
+    @media (max-width:380px) {
+        .size{
+            display: flex;
+            align-self: center;
+            width: 60%;
+            margin-left: 4rem;
+        }
+        .maincart{
+            display: flex;
+            flex-direction: column;
+            margin-left: 5rem;
+        }
+        .cart{
+            margin-right: 0;
+            padding-right: 0rem;
+        }
+        
+
+    }

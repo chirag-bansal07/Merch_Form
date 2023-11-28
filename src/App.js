@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import Detailsform from './component/detailsform';
+import Cart from './component/cart';
 import './App.css';
-
+let form, order;
+const submit = (FormData) =>{
+  form=FormData;
+}
+const cartdata=(cart) =>{
+  order=cart
+}
+const submitdata= ()=>{
+console.log ('user details:',form, 'order:',order);
+}
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Detailsform submitform={submit}></Detailsform>
+      <Cart className='Cart' finalcart={cartdata}></Cart>
+      <button className='submit-button' onClick={submitdata}>submit</button>
     </div>
   );
 }

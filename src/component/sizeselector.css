@@ -1,0 +1,8 @@
+.sizebutton{
+    background-color: #051956;
+}
+@media (max-width:380px) {
+    .sizebutton{
+    width: 6rem;
+    }
+}

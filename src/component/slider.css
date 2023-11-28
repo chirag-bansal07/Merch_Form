@@ -1,0 +1,68 @@
+.slider {
+    position: relative;
+    height: 23rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+}
+
+.image {
+    display: flex;
+    width: 100%; 
+    border-radius: 10px;
+    object-fit: fill; 
+    background-color: #ded3b7;
+}
+.images{
+    margin-left: 12rem;
+    width: 50%;
+    height: 50%;
+    border-radius: 10px;
+    object-fit: fill; 
+    background-color: #ded3b7;    
+}
+.eat-code-repet-hoodie{
+    margin-left: 8rem;
+    border-radius: 10px;
+    width: 35%;
+}
+.right-arrow,
+.left-arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 3rem;
+    color: black;
+    user-select: none;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.right-arrow {
+    right: 20px; 
+}
+
+.left-arrow {
+    left: 20px; 
+}
+
+.slide {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition-duration: 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1.08);
+}
+@media(max-width:380px){
+    .slider{
+        height: 25rem;
+        margin-left: 10rem;
+        width: 71%;
+    }
+}
