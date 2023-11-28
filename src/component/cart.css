@@ -9,6 +9,13 @@
         background-color: #051956;
         border-radius: 30px;
     }
+    .maincart{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
     .buttons{
         gap: 3rem;
     }
@@ -18,6 +25,10 @@
     }
     .totalPrize{
         color: white;
+    }
+    .size{
+        justify-content: center;
+        align-items: center;
     }
     .total{
         text-align: center;

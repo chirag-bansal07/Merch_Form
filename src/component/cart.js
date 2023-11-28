@@ -5,17 +5,20 @@ import { useState, useEffect } from 'react';
 let selectedSize = '';
 let selectedMerch = '';
 let Prize,total;
-let number,item;
+let number=0,item;
 const Cart = ({finalcart}) => {
   const initialCart = JSON.parse(localStorage.getItem('cart')) || [];
   const [cart, setCart] = useState(initialCart);
+  const [sizeerror, setsizeerror] = useState(false);
 
 
 
   const selectSize = (size) => {
     selectedSize = size;
     if (selectSize===''){
-
+      setsizeerror(true);
+      console.log(sizeerror)
+      return;
     }
   };
 
@@ -36,7 +39,7 @@ const Cart = ({finalcart}) => {
     total=0;
     number=0;
     localStorage.setItem('totalprize', 0);
-    localStorage.setItem('cartitem', 0);
+    localStorage.setItem('cartitem', number);
   };
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -54,7 +57,8 @@ const Cart = ({finalcart}) => {
   return (
     <div className='maincart'>
       <Slider className='slider' onImageSelect={imageSelectHandler} totalPrize={Prizehandeler}></Slider>
-      <Sizeselector className='size' sizedata={selectSize} />
+      <Sizeselector className='size' sizedata={selectSize}/>
+      {sizeerror&& <span className="error">Please Select The Size</span>}
       <div className='cart'>
         <div className='buttons'>
       <button onClick={cartHandler} className='cartbutton'>ADD TO CART</button>

@@ -9,6 +9,10 @@ const cartdata=(cart) =>{
   order=cart
 }
 const submitdata= ()=>{
+  if(form === undefined){
+    alert('Please validate the form')
+    return;
+  }
 console.log ('user details:',form, 'order:',order);
 }
 function App() {

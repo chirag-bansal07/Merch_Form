@@ -2,13 +2,13 @@ import { useState } from "react"
 import './slider.css'
 import {FaArrowAltCircleRight, FaArrowAltCircleLeft} from 'react-icons/fa'
 const images = [
-    { src: 'https://mir-s3-cdn-cf.behance.net/projects/404/808f0f171382245.Y3JvcCw5ODMsNzY5LDIwOSww.png',
-     className: 'DVM-Hoodie image',
+    { src: 'https://images.bewakoof.com/t1080/men-s-pink-cyber-samurai-graphic-printed-oversized-hoodies-625389-1699949518-2.jpg',
+     className: 'Hoodie1',
     prize: 1500 },
-    { src: 'https://merchshop.in/wp-content/uploads/2019/06/code-repeat-design-black.jpg', 
-    className: 'eat-code-repet-hoodie images',prize: 1000 },
-    { src: 'https://ih1.redbubble.net/image.449090616.2017/ssrco,mhoodiez,mens,oatmeal_heather,front,square_product,600x600-bg,f8f8f8.u3.jpg', 
-    className: 'hackathon-hoodie images', prize: 1200 },
+    { src: 'https://images.bewakoof.com/t1080/men-s-green-jurassic-graphic-printed-oversized-hoodie-597139-1700548840-1.jpg', 
+    className: 'hoodie2',prize: 1000 },
+    { src: 'https://images.bewakoof.com/t1080/men-s-black-king-t-challa-graphic-printed-oversized-hoodies-628050-1701082090-2.jpg', 
+    className: 'hoodie3', prize: 1200 },
 ]
 const Slider = (props) => {
     const length = images.length;
@@ -32,16 +32,17 @@ const Slider = (props) => {
     return (
     <div className="slider">
         <FaArrowAltCircleLeft className='left-arrow' onClick={prevslide}/>
-        <FaArrowAltCircleRight className='right-arrow' onClick={Nextslide}/>
+        
         {images.map((slide,index) =>{
             return(
                 <div className={index === current ? 'slide active' : 'slide'}
                 key={index}>
             {index === current && (
-            <img src={slide.src} alt='hoodie' className={slide.className}/>
+            <img src={slide.src} alt='hoodie' className='image'/>
             )}
             </div>);
         })}
+        <FaArrowAltCircleRight className='right-arrow' onClick={Nextslide}/>
     </div>
   )
 }

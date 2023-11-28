@@ -52,7 +52,6 @@ const DetailsForm = ({submitform}) => {
     }
     setFormSubmitted(true);
     submitform(formData);
-    console.log(formSubmitted);
   };
 
   const resetHandeler = () => {
