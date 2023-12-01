@@ -24,6 +24,7 @@ function App() {
  const {setForm, setOrder, page, submitData } = useFormData();
 
  return (
+  
     <div className="App">
       {page && <h1 className="submited">THANK YOU <br/>your form is submitted</h1>}
       {!page && (

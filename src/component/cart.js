@@ -53,13 +53,14 @@ const Cart = ({finalcart}) => {
       <Sizeselector className='size' sizedata={selectSize}/>
       {sizeerror&& <span className="error">Please Select The Size</span>}
       <div className='cart'>
-        <div className='buttons'>
+        <div className='cartcount'>
       <button onClick={cartHandler} className='cartbutton'>ADD TO CART</button>
-      <button onClick={cartReset} className='cartbutton'>RESET CART</button>
-      </div>
-      <div className='cartitem'>
-      <div className='totalPrize'>YOUR CART TOTAL IS<div className='total'>{total}</div></div>
       <div className='totalPrize'>NUMBER OF ITEMS ADDED <div className='total'>{cart.length}</div></div>
+      
+      </div>
+      <div className='cartcount'>
+      <button onClick={cartReset} className='cartbutton'>RESET CART</button>
+      <div className='totalPrize'>YOUR CART TOTAL IS<div className='total'>{total}</div></div>
       </div>
       </div>
     </div>

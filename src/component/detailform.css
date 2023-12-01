@@ -4,9 +4,12 @@
     align-items: center;
     margin-top: 1rem;
     padding:2rem;
-    padding-right: 2rem;
-    width: 40rem;
-    background-color: #051956;   
+    width: 50vw;
+    background-color: #a892ee;   
+    opacity: 1;
+    transition-duration: .5s;
+    transform: scale(1.08);
+    box-sizing: border-box;
 }
 
 form{
@@ -24,10 +27,10 @@ form{
 }
 h2{
     margin: 0;
-    color: white;
+    color:antiquewhite;
 }
 label{
-    color: white;
+    color: black;
     font-size: 1.2rem;
 }
 .terms{
@@ -41,7 +44,7 @@ label{
 }
 input{
     border-radius: 10px;
-    border: 3px solid #b421e0;
+    border: 3px solid #40005d;
     width: 100%;
     height: 1.7rem;
 }
@@ -68,7 +71,7 @@ button{
     width: 8rem;
     height: 2rem;
     color: white;
-    background-color: #3450a1;
+    background-color: #40005d;
     border-radius: 10px;
     border: none;
     box-shadow: 2px black;
@@ -84,25 +87,47 @@ button{
     text-align: left;
     display: flex;
     gap: 2rem;
+
 }
-.green-tick{
+.hideform{
+    width: 50vw;
+    min-width:255px ;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    background-color: #a892ee;
+    align-items: center;
+    border-radius: 20px;
+}
+.showform{
+    width: 20Vw;
+    min-width: 205px;
+    height: 3rem;
+    border-radius: 10px;
     font-size: 1.4rem;
-    font-weight: bold;
-    color: rgb(5, 225, 5);
+    font-weight: 600;
 }
-@media (max-width:380px) {
+@media (max-width:427px) {
     *{
         font-size: 1.2rem;
     }
-    .form{
-        width: 100%;
-        margin-left: 8.8rem;
+    form{
+        gap: .8rem;
     }
     .main{
         flex-direction: column;
-        width: 100%;
     }
     .flex{
         flex-direction: column;
+        gap: .4rem;
     }
 }
+@media (max-width: 800px){
+    *{
+        font-size: 1rem;
+    }
+    .form{
+        width: 90vw;
+    }  
+}
+

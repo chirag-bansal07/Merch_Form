@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './detailform.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { validateBitsId, validationphonenumber, validateemail } from './validation.js';
 
 const DetailsForm = ({submitform}) => {
@@ -17,6 +15,7 @@ const DetailsForm = ({submitform}) => {
     const storedFormData = localStorage.getItem('formData');
     return storedFormData ? JSON.parse(storedFormData) : initialFormData;
   });
+  const [display,setdisplay] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [errors, setErrors] = useState({
     email: '',
@@ -28,7 +27,6 @@ const DetailsForm = ({submitform}) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setErrors({ ...errors, [e.target.name]: '' });
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -52,6 +50,8 @@ const DetailsForm = ({submitform}) => {
     }
     setFormSubmitted(true);
     submitform(formData);
+    setdisplay(false);
+    
   };
 
   const resetHandeler = () => {
@@ -63,6 +63,9 @@ const DetailsForm = ({submitform}) => {
       bitsId: ''
     });
   };
+  function show(){
+    setdisplay(true);
+  }
 
   useEffect(() => {
     localStorage.setItem('formData', JSON.stringify(formData));
@@ -70,6 +73,11 @@ const DetailsForm = ({submitform}) => {
 
   return (
     <div>
+      { !display ? (
+      <div className='hideform'>
+        <button className='showform' onClick={show}>{formSubmitted ?('Details Submitted'):('Enter Your Details')}</button>
+      </div> )
+      : (
       <div className='form'>
         <form className='main' onSubmit={handleSubmit}>
           <h2>Enter Your Details</h2>
@@ -113,15 +121,12 @@ const DetailsForm = ({submitform}) => {
           </label>
           <div className='buttons'>
             <button className='submit' type='submit'>
-            {formSubmitted && (
-            <div className="green-tick">
-                <FontAwesomeIcon icon={faCheck} />
-            </div>
-            )}VALIDATE</button>
+            VALIDATE</button>
             <button type='button' className='reset' onClick={resetHandeler}>RESET</button>
           </div>
         </form>
       </div>
+      )}
     </div>
   );
 };
