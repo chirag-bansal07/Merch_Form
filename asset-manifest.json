@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Merch_Form/static/css/main.9db8fd7c.css",
+    "main.js": "/Merch_Form/static/js/main.6bc3c261.js",
+    "static/js/787.21f15492.chunk.js": "/Merch_Form/static/js/787.21f15492.chunk.js",
+    "index.html": "/Merch_Form/index.html",
+    "main.9db8fd7c.css.map": "/Merch_Form/static/css/main.9db8fd7c.css.map",
+    "main.6bc3c261.js.map": "/Merch_Form/static/js/main.6bc3c261.js.map",
+    "787.21f15492.chunk.js.map": "/Merch_Form/static/js/787.21f15492.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9db8fd7c.css",
+    "static/js/main.6bc3c261.js"
+  ]
+}
